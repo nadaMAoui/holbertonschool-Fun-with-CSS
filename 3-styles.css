@@ -1,0 +1,67 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+  
+  .menu {
+    position: fixed; /* Keep menu fixed on the screen */
+    top: 0;
+    left: 0;
+    width: 50px; /* Adjust width for hamburger button */
+    height: 100vh;
+    background-color: #333; /* Adjust background color */
+    transition: transform 0.3s ease-in-out; /* Transition for sliding effect */
+  }
+  
+  /* Hamburger button styles */
+  .menu-open-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  .menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: transform 0.3s ease-in-out; /* Transition for hamburger animation */
+  }
+  
+  /* Menu content styles */
+  .menu-item {
+    display: none; /* Initially hidden */
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+  }
+  
+  .menu-item i {
+    margin-right: 5px;
+  }
+  
+  /* Styles for open state */
+  .menu-open:checked ~ .menu {
+    transform: translateX(100%); /* Slide menu content into view */
+  }
+  
+  .menu-open:checked ~ .menu-item {
+    display: block; /* Show menu items when expanded */
+  }
+  
+  .menu-open:checked ~ .menu-line-1 {
+    transform: rotate(45deg) translate(-5px, 6px);
+  }
+  
+  .menu-open:checked ~ .menu-line-2 {
+    opacity: 0;
+  }
+  
+  .menu-open:checked ~ .menu-line-3 {
+    transform: rotate(-45deg) translate(-5px, -6px);
+  }
+  

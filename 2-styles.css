@@ -1,0 +1,72 @@
+/* General styles */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* Adjust width as needed */
+  height: 34px;
+}
+
+.toggle-cb {
+  display: none; /* Hide the checkbox */
+}
+
+.toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.toggle-inner {
+  background-color: #ccc;
+  border-radius: 34px;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.toggle-switch {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Styles for checked state (Yes) */
+.toggle-cb:checked + .toggle-label .toggle-inner {
+  background-color: #2196F3; /* Adjust color for Yes state */
+}
+
+.toggle-cb:checked + .toggle-label .toggle-switch {
+  transform: translateX(26px);
+}
+
+/* Styles for unchecked state (No) */
+.toggle-cb:not(:checked) + .toggle-label .toggle-switch {
+  transform: translateX(0);
+}
+
+/* Labels for Yes/No states */
+.toggle-on,
+.toggle-off {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #fff;
+  width: 50%;
+  text-align: center;
+}
+
+.toggle-on {
+  left: 0;
+}
+
+.toggle-off {
+  right: 0;
+}
